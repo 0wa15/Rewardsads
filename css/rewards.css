@@ -1,0 +1,218 @@
+/* Additional styles for rewards page */
+.rewards-section {
+    padding: 60px 0;
+    background-color: var(--light-background);
+}
+
+.rewards-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rewards-section > .container > p {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 40px;
+}
+
+.rewards-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.reward-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+}
+
+.reward-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+}
+
+.reward-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.reward-description {
+    color: var(--light-text);
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.reward-points {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.loading, .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--light-text);
+}
+
+.how-to-redeem {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+
+.how-to-redeem h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.redemption-reward {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.redemption-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.redemption-info {
+    flex-grow: 1;
+}
+
+.redemption-info h3 {
+    margin-bottom: 5px;
+}
+
+.redemption-points {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.redemption-user {
+    margin-bottom: 30px;
+}
+
+.redemption-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Dashboard styles */
+.dashboard-section {
+    padding: 60px 0;
+    background-color: var(--light-background);
+}
+
+.dashboard-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.stats-section {
+    margin-top: 40px;
+}
+
+.stats-section h3 {
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: var(--light-text);
+}
+
+.activity-list {
+    margin-top: 20px;
+}
+
+.empty-state {
+    padding: 30px;
+    text-align: center;
+    color: var(--light-text);
+}
+
+.error-message {
+    padding: 20px;
+    text-align: center;
+    color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .redemption-reward {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .redemption-image {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AdRewards</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AdRewards</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn login-button">Sign In</button>
+                <div id="userInfo" class="user-info hidden">
+                    <span id="pointsDisplay" class="points-display">0 points</span>
+                    <button id="logoutBtn" class="btn btn-small">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+                
+                <div class="auth-content">
+                    <div class="auth-form login-form active">
+                        <h2>Welcome Back!</h2>
+                        <p>Sign in to continue earning rewards</p>
+                        
+                        <div class="social-auth">
+                            <button id="googleLoginBtn" class="btn btn-social btn-google">
+                                <img src="../images/google-icon.png" alt="Google"> Sign in with Google
+                            </button>
+                            <button id="discordLoginBtn" class="btn btn-social btn-discord">
+                                <img src="../images/discord-icon.png" alt="Discord"> Sign in with Discord
+                            </button>
+                        </div>
+                        
+                        <div class="divider">
+                            <span>or</span>
+                        </div>
+                        
+                        <form id="emailLoginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input type="email" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <div class="form-footer">
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </form>
+                    </div>
+                    
+                    <div class="auth-form signup-form">
+                        <h2>Create Account</h2>
+                        <p>Join thousands of users earning rewards</p>
+                        
+                        <div class="social-auth">
+                            <button id="googleSignupBtn" class="btn btn-social btn-google">
+                                <img src="../images/google-icon.png" alt="Google"> Sign up with Google
+                            </button>
+                            <button id="discordSignupBtn" class="btn btn-social btn-discord">
+                                <img src="../images/discord-icon.png" alt="Discord"> Sign up with Discord
+                            </button>
+                        </div>
+                        
+                        <div class="divider">
+                            <span>or</span>
+                        </div>
+                        
+                        <form id="emailSignupForm">
+                            <div class="form-group">
+                                <label for="signupName">Name</label>
+                                <input type="text" id="signupName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupEmail">Email</label>
+                                <input type="email" id="signupEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupPassword">Password</label>
+                                <input type="password" id="signupPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" required>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="termsAgree" required>
+                                <label for="termsAgree">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AdRewards</h2>
+                    <p>Watch Ads. Earn Rewards.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Help</h3>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="support.html">Support</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AdRewards. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/firebase-auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.auth-tab');
+            const forms = document.querySelectorAll('.auth-form');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show corresponding form
+                    forms.forEach(form => {
+                        if (form.classList.contains(tabName + '-form')) {
+                            form.classList.add('active');
+                        } else {
+                            form.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Login form submission
+            const emailLoginForm = document.getElementById('emailLoginForm');
+            emailLoginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                userAuth.signInWithEmail(email, password)
+                    .then(user => {
+                        window.location.href = '../index.html';
+                    })
+                    .catch(error => {
+                        alert(`Login failed: ${error.message}`);
+                    });
+            });
+            
+            // Signup form submission
+            const emailSignupForm = document.getElementById('emailSignupForm');
+            emailSignupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('signupName').value;
+                const email = document.getElementById('signupEmail').value;
+                const password = document.getElementById('signupPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const termsAgree = document.getElementById('termsAgree').checked;
+                
+                if (!termsAgree) {
+                    alert('You must agree to the Terms & Conditions and Privacy Policy');
+                    return;
+                }
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match');
+                    return;
+                }
+                
+                userAuth.signUpWithEmail(email, password, name)
+                    .then(user => {
+                        window.location.href = '../index.html';
+                    })
+                    .catch(error => {
+                        alert(`Signup failed: ${error.message}`);
+                    });
+            });
+            
+            // Google login
+            const googleLoginBtn = document.getElementById('googleLoginBtn');
+            googleLoginBtn.addEventListener('click', function() {
+                userAuth.signInWithGoogle()
+                    .then(user => {
+                        window.location.href = '../index.html';
+                    })
+                    .catch(error => {
+                        alert(`Google login failed: ${error.message}`);
+                    });
+            });
+            
+            // Google signup
+            const googleSignupBtn = document.getElementById('googleSignupBtn');
+            googleSignupBtn.addEventListener('click', function() {
+                userAuth.signInWithGoogle()
+                    .then(user => {
+                        window.location.href = '../index.html';
+                    })
+                    .catch(error => {
+                        alert(`Google signup failed: ${error.message}`);
+                    });
+            });
+            
+            // Discord login/signup (placeholder)
+            const discordBtns = document.querySelectorAll('#discordLoginBtn, #discordSignupBtn');
+            discordBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    alert('Discord authentication is not implemented in this demo. Please use Google or Email instead.');
+                });
+            });
+            
+            // Logout button
+            const logoutBtn = document.getElementById('logoutBtn');
+            logoutBtn.addEventListener('click', function() {
+                userAuth.signOut()
+                    .then(() => {
+                        window.location.reload();
+                    })
+                    .catch(error => {
+                        alert(`Logout failed: ${error.message}`);
+                    });
+            });
+            
+            // Check if user is already logged in
+            if (userAuth.isUserLoggedIn()) {
+                window.location.href = '../index.html';
+            }
+        });
+    </script>
+</body>
+</html>

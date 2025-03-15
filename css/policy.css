@@ -1,0 +1,225 @@
+/* Styles for policy and contact pages */
+.policy-section {
+    padding: 60px 0;
+    background-color: var(--light-background);
+}
+
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+}
+
+.policy-content h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 30px;
+}
+
+.policy-intro {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.policy-section {
+    margin-bottom: 30px;
+}
+
+.policy-section h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.policy-section p {
+    margin-bottom: 15px;
+}
+
+.policy-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.policy-section li {
+    margin-bottom: 5px;
+}
+
+/* Contact page styles */
+.contact-section {
+    padding: 60px 0;
+    background-color: var(--light-background);
+}
+
+.contact-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+}
+
+.contact-content h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-method {
+    margin-bottom: 20px;
+}
+
+.method-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-method h3 {
+    margin-bottom: 10px;
+}
+
+.contact-method p {
+    margin-bottom: 5px;
+    color: var(--light-text);
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact-form-container {
+    background-color: var(--light-background);
+    border-radius: var(--border-radius);
+    padding: 30px;
+}
+
+.contact-form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.faq-section {
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 40px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background-color: var(--light-background);
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.faq-item h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.faq-more {
+    text-align: center;
+}
+
+.success-message {
+    text-align: center;
+    padding: 30px;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-list {
+        grid-template-columns: 1fr;
+    }
+}
