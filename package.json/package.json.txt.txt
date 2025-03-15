@@ -1,0 +1,6 @@
+{
+"scripts": {
+"start": "your-start-command",
+"dev": "your-dev-command"
+}
+}
